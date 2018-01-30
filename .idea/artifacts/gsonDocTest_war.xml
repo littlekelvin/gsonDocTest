@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gsonDocTest:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="gsonDocTest.war">
+      <element id="artifact" artifact-name="gsonDocTest:war exploded" />
+    </root>
+  </artifact>
+</component>
