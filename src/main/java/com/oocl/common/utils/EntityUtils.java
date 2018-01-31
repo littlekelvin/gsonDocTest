@@ -12,11 +12,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class EntityUtils {
     public static final Gson gson = buildGson();
 
-    public static final String FILE_PATH_PREFIX = "../ARP_Domain/resource/";
+    public static final String FILE_PATH_PREFIX = "./src/main/resources/resource/";
 
     public static Gson buildGson() {
         return new GsonBuilder().addSerializationExclusionStrategy(getExclusionStrategy()).setPrettyPrinting().create();
@@ -42,15 +43,15 @@ public class EntityUtils {
 
     public static void generateJsonFile(String filename, Object obj) throws IOException {
         String jsonString = gson.toJson(obj);
-        FileUtils.writeStringToFile(new File(FILE_PATH_PREFIX + filename), jsonString);
+        FileUtils.writeStringToFile(new File(FILE_PATH_PREFIX + filename), jsonString,Charset.defaultCharset());
     }
 
     public static <T> T generateObjFromJsonFile(String filename, Class<T> clazz) throws IOException {
-        String jsonString = FileUtils.readFileToString(new File(FILE_PATH_PREFIX + filename));
+        String jsonString = FileUtils.readFileToString(new File(FILE_PATH_PREFIX + filename), Charset.defaultCharset());
         return gson.fromJson(jsonString, clazz);
     }
     public static JSONObject generateJSONObjectFromJsonFile(String filename) throws IOException {
-        String jsonString = FileUtils.readFileToString(new File(FILE_PATH_PREFIX + filename));
+        String jsonString = FileUtils.readFileToString(new File(FILE_PATH_PREFIX + filename), Charset.defaultCharset());
         return JSONObject.parseObject(jsonString);
     }
 
