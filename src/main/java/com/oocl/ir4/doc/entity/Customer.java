@@ -2,6 +2,7 @@ package com.oocl.ir4.doc.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Customer {
@@ -14,6 +15,11 @@ public class Customer {
 	
 	@ManyToMany
 	private Address address;
+
+	@ManyToOne
+	private Company company;
+
+	private Partner partner;
 
 	public Customer() {
 		// TODO Auto-generated constructor stub
@@ -28,8 +34,6 @@ public class Customer {
 		this.salary = salary;
 		this.address = address;
 	}
-
-
 
 	public long getCid() {
 		return cid;
@@ -78,6 +82,25 @@ public class Customer {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer{" +
+				"cid=" + cid +
+				", name='" + name + '\'' +
+				", phone='" + phone + '\'' +
+				", age=" + age +
+				", salary=" + salary +
+				", address=" + address +
+				", company=" + company +
+				'}';
+	}
 }
