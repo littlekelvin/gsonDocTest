@@ -1,6 +1,8 @@
 package com.oocl.ir4.doc.test;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import com.oocl.common.utils.DBMockUtils;
 import com.oocl.common.utils.EntityUtils;
@@ -46,5 +48,19 @@ public class GsonTest1 {
 	public void test03() throws Exception {
 		Customer c = EntityUtils.generateObjFromJsonFile(DBMockUtils.getFileName(Customer.class, "222111547"), Customer.class);
 		System.out.println(c);
+	}
+
+	@Test
+	public void test04() throws Exception {
+		EntityUtils.generateJsonFile(DBMockUtils.getFileName(List.class, String.valueOf(customer.getCid())),
+				Arrays.asList(customer, customer1, customer2, customer3));
+	}
+
+	@Test
+	public void test05() throws Exception {
+		List list = EntityUtils.generateObjFromJsonFile(DBMockUtils.getFileName(List.class, String.valueOf(customer.getCid())), List.class);
+		for(Object obj:list){ // (obj instanceof com.google.gson.internal.LinkedTreeMap) == true
+			System.out.println(obj);
+		}
 	}
 }

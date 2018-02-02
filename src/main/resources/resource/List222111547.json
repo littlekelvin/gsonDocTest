@@ -1,0 +1,35 @@
+[
+  {
+    "cid": 222111547,
+    "name": "Kelvin",
+    "phone": "11222223333",
+    "age": 24,
+    "salary": 5000.0,
+    "company": {
+      "id": 2,
+      "code": "OOCL",
+      "name": "OOCLL Company"
+    }
+  },
+  {
+    "cid": 222111548,
+    "name": "Kelvi1n",
+    "phone": "11222223334",
+    "age": 25,
+    "salary": 5000.0
+  },
+  {
+    "cid": 222111549,
+    "name": "Kelvin",
+    "phone": "11222223335",
+    "age": 29,
+    "salary": 5000.0
+  },
+  {
+    "cid": 222111540,
+    "name": "Kelvin",
+    "phone": "11222223336",
+    "age": 28,
+    "salary": 5000.0
+  }
+]

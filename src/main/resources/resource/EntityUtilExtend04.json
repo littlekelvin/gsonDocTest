@@ -1,0 +1,12 @@
+{
+  "cid": 222111547,
+  "name": "Kelvin",
+  "phone": "11222223333",
+  "age": 24,
+  "salary": 5000.0,
+  "address": {
+    "aid": 12,
+    "code": "GZ",
+    "name": "software load"
+  }
+}

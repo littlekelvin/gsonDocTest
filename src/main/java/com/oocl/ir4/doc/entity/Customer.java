@@ -3,6 +3,7 @@ package com.oocl.ir4.doc.entity;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
@@ -19,6 +20,7 @@ public class Customer {
 	@ManyToOne
 	private Company company;
 
+	@OneToOne
 	private Partner partner;
 
 	public Customer() {
@@ -91,6 +93,14 @@ public class Customer {
 		this.company = company;
 	}
 
+	public Partner getPartner() {
+		return partner;
+	}
+
+	public void setPartner(Partner partner) {
+		this.partner = partner;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer{" +
@@ -101,6 +111,7 @@ public class Customer {
 				", salary=" + salary +
 				", address=" + address +
 				", company=" + company +
+				", partner=" + partner +
 				'}';
 	}
 }
